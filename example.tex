@@ -1,0 +1,57 @@
+\documentclass{li-xelatex-biblatex}
+
+\usepackage{lipsum}
+
+\newcommand{\AuthorA}{%
+    András Bárány\\%
+    Leiden University Centre for Linguistics\\%
+    Leiden University}
+
+% You can add additional authors the following way:
+% \newcommand{\AuthorB}{2nd author\\Department\\Institution}
+% You can add contact information for additional authors (see end of file):
+% \contact{\AuthorX}{email}
+
+% \author{\AuthorA \and \AuthorX} for multiple authors
+\author{\AuthorA}
+
+\title{LI class example}
+
+\makeatletter
+\AtBeginDocument{\toggletrue{blx@useprefix}}
+\AtBeginBibliography{\togglefalse{blx@useprefix}}
+\makeatother
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}\lipsum[3]\end{abstract}
+\keywords{Example keyword}
+
+\section{Section heading}\addtoendnotes{Acknowledgement endnote.}
+
+\lipsum[1]
+
+\section{Section heading}
+
+\subsection{Subsection heading}
+
+\lipsum[2]
+
+In-text citation with page number \textcite[443--445]{EKiss2008}. \emph{LI}
+requires not using parentheses when referring to a publication, for example in
+phrases like \enquote{in the sense of \cite{EKiss2008}}. Finally, the following
+are citations in brackets \parencite{EKiss2008,Szabolcsi1994}.
+
+This is an in-text citation of a paper that has not appeared yet:
+\textcite{Barany2020}. In parentheses, the pubstate has to be separated by a
+comma \parencite{Barany2020}. \Textcite{denDikken2018}, \textcite{vanUrk2015}
+shows that Dutch names with \emph{tussenvoegsels} can have different
+capitalisations.
+
+\printbibliography
+
+\contact{\AuthorA}{a.barany@hum.leidenuniv.nl}
+
+\end{document}
